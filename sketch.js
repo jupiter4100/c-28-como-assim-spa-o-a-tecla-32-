@@ -9,13 +9,13 @@ const Constraint=Matter.Constraint;
 var treeObj, stoneObj,groundObject;
 var mango1,mango2,mango3,mango4,mango5,mango6,mango7,mango8,mango9,mango10,mango11,mango12;
 var world,boy;
-
-//Declare launcherObject and launchForce variable here
 var estilingue
+//Declare launcherObject and launchForce variable here
 var launcherForce=100
 
 function preload(){
-	boy=loadImage("images/boy.png");
+	boy=loadImage("boy.png");
+  
   }
 
 function setup() {
@@ -41,7 +41,7 @@ function setup() {
 	treeObj=new tree(1050,580);
 	groundObject=new ground(width/2,600,width,20);
   //create launcherObject here
-estilingue= new Estilingue(stoneObj.body,{x:235,y:420})
+estilingue=new Estilingue(stoneObj.body,{x:235,y:420})
 
 	Engine.run(engine);
 }
@@ -103,10 +103,10 @@ function mouseReleased(){
 //create keyPressed function here
 function keyPressed(){
   if(keyCode===32){
-Matter.Body.setPosition(stoneObj.body,{x:235,y:420})
-estilingue.attach(stoneObj.body)
+    Matter.Body.setPosition(stoneObj.body,{x:235,y:420})
+    estilingue.attach(stoneObj.body)
   }
-  }
+}
   function detectollision(lstone,lmango){
 
   mangoBodyPosition=lmango.body.position
